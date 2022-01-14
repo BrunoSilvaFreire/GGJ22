@@ -1,0 +1,6 @@
+[submodule "Tsuki2D"]
+	path = Tsuki2D
+	url = git@github.com:BrunoSilvaFreire/Tsuki2D.git
+[submodule "TsukiSuite"]
+	path = TsukiSuite
+	url = git@github.com:LunariStudios/TsukiSuite.git
