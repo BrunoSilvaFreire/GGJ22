@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build_win:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Install Git SSH Key
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.UNITY_RSA }}
+      - name: Build Unity
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          projectPath: .
+          unityVersion: auto
+          targetPlatform: StandaloneWindows64
+      - name: Publish result
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+
+      - name: cache
+        uses: actions/cache@v1.1.0
+        with:
+          path: ./Library
+          key: Library-GGJ22-TargetPlatform
+          restore-keys: |
+            Library-GGJ22-
+            Library-
