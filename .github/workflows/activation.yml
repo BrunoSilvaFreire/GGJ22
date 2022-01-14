@@ -1,6 +1,6 @@
 name: Acquire Unity activation file
 
-on: { }
+on: workflow_dispatch
 
 jobs:
   activate:
