@@ -1,0 +1,19 @@
+{
+    "name": "ShiroiFX.Editor",
+    "references": [
+        "GUID:4e4b2da11469cf1a1a03b701b200edf7",
+        "GUID:4c0668d2c90a58d40a31bb673f8cde7d",
+        "GUID:297785b246e7a16489d29260cfb91155"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

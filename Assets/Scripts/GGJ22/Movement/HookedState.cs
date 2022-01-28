@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Linq;
 using GGJ22.Game;
 using GGJ22.Input;
 using GGJ22.Traits.Movement.Hook;
 using Lunari.Tsuki2D.Runtime.Movement;
 using Lunari.Tsuki2D.Runtime.Movement.States;
+using Shiroi.FX.Effects;
+using Shiroi.FX.Features;
 using Sirenix.OdinInspector;
 using UnityEngine;
 namespace GGJ22.Movement {
@@ -12,17 +15,19 @@ namespace GGJ22.Movement {
         private Vector2 hookTip;
         public float linecastOffset = 1;
         public WobblyController wobbly;
+        public Effect onHookBreak;
+        public LineRenderer indicator;
         public Hook hook;
-        public MotorState normal;
+        public GroundedState normal;
         public bool current;
         public float airControlStrength = 5;
         public float maxHookSpeed;
         public float hookStrength;
-        private void Start() { }
 
         public override void Begin(Motor motor, BlobInput input, ref Vector2 velocity) {
             base.Begin(motor, input, ref velocity);
             hook.enabled = false;
+            hook.aimIndicator.enabled = false;
             wobbly.DeWobble();
             wobbly.wobbly.lineRenderer.enabled = true;
             current = true;
@@ -31,6 +36,7 @@ namespace GGJ22.Movement {
             base.End(motor, input, ref velocity);
             wobbly.deWobbling = false;
             hook.enabled = true;
+            hook.aimIndicator.enabled = true;
             wobbly.wobbly.lineRenderer.enabled = false;
             current = false;
         }
@@ -59,6 +65,7 @@ namespace GGJ22.Movement {
             end += fallback;
             if (Physics2D.LinecastNonAlloc(origin, end, results, GameConfiguration.Instance.worldMask) > 0) {
                 motor.ActiveState = normal;
+                BreakHook(results.Single().point);
                 return;
             }
             var control = motor.Control;
@@ -66,6 +73,13 @@ namespace GGJ22.Movement {
             velocity.x += airControlStrength * inputDir * motor.GetDirectionControl(inputDir);
             velocity += dir * hookStrength;
             velocity = Vector2.ClampMagnitude(velocity, max);
+        }
+        private void BreakHook(Vector2 point) {
+            onHookBreak.PlayIfPresent(
+                this,
+                false,
+                new PositionFeature(point)
+            );
         }
         public void Attach(Rigidbody2D body, Vector2 point) {
             hookedTo = body;
