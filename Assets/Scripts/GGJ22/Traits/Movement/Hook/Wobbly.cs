@@ -26,9 +26,9 @@ namespace GGJ22.Traits.Movement.Hook {
         private void Compute() {
             lineRenderer.positionCount = (int) (numPoints + 1);
             var dir = tip - Vector2.one;
-            var forwardAngle = Mathf.Atan2(dir.y, dir.x);
+            var angle = Mathf.Atan2(dir.y, dir.x);
             // Rotate 90 deg
-            var upAngleRad = forwardAngle + (Mathf.Deg2Rad * 90);
+            var upAngleRad = angle + Mathf.Deg2Rad * 90;
             var up = new Vector2(
                 Mathf.Cos(upAngleRad),
                 Mathf.Sin(upAngleRad)

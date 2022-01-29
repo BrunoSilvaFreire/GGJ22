@@ -39,12 +39,14 @@ namespace GGJ22.Traits.Movement.Hook {
         #endregion
 
         #region Internal Properties
+
         private Vector3[] _positions;
         private bool _hasTarget;
         private float _currentDistance;
         private bool _currentlyShot;
         private TravelDirection _direction;
         private Vector2 _shotDirection;
+
         #endregion
 
         private enum TravelDirection {
@@ -55,10 +57,22 @@ namespace GGJ22.Traits.Movement.Hook {
             _positions = new Vector3[2];
         }
         public override void Configure(TraitDescriptor descriptor) {
-            descriptor.RequiresAnimatorParameter(HookHasTargetName, AnimatorControllerParameterType.Bool);
+            descriptor.RequiresAnimatorParameter(
+                HookHasTargetName,
+                AnimatorControllerParameterType.Bool
+            );
             if (descriptor.DependsOn(out _aim, out _animatorBinder, out _input, out _motor)) {
-                _animatorBinder.BindBool(HookHasTargetName, () => _hasTarget);
+                _animatorBinder.BindBool(
+                    HookHasTargetName,
+                    () => _hasTarget
+                );
             }
+        }
+        public void ForceBeginRetract(Vector2 fromPoint) {
+            _currentlyShot = true;
+            wobbly.tip = fromPoint;
+            _currentDistance = Vector2.Distance(wobbly.tip, wobbly.origin);
+            _direction = TravelDirection.Backward;
         }
         private void Update() {
             aimIndicator.enabled = !_currentlyShot;
