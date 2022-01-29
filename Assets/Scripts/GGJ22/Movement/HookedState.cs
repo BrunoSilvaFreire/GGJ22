@@ -11,18 +11,18 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 namespace GGJ22.Movement {
     public class HookedState : MotorState<BlobInput> {
-        private Rigidbody2D hookedTo;
-        private Vector2 hookTip;
         public float linecastOffset = 1;
         public WobblyController wobbly;
         public Effect onHookBreak;
-        public LineRenderer indicator;
         public Hook hook;
         public GroundedState normal;
         public bool current;
         public float airControlStrength = 5;
         public DistanceJoint2D joint;
-        private float maxLength;
+
+        private Rigidbody2D _hookedTo;
+        private Vector2 _hookTip;
+        private float _maxLength;
         public override void Begin(Motor motor, BlobInput input, ref Vector2 velocity) {
             base.Begin(motor, input, ref velocity);
             hook.enabled = false;
@@ -37,7 +37,7 @@ namespace GGJ22.Movement {
             wobbly.deWobbling = false;
             hook.enabled = true;
             hook.aimIndicator.enabled = true;
-            hook.ForceBeginRetract(hookTip);
+            hook.ForceBeginRetract(_hookTip);
             wobbly.wobbly.lineRenderer.enabled = false;
             joint.enabled = false;
             current = false;
@@ -45,7 +45,7 @@ namespace GGJ22.Movement {
         private void Update() {
             if (current) {
                 wobbly.wobbly.origin = transform.position;
-                wobbly.wobbly.tip = hookTip;
+                wobbly.wobbly.tip = _hookTip;
             }
         }
 
@@ -59,7 +59,7 @@ namespace GGJ22.Movement {
             var results = new RaycastHit2D[1];
             var origin = (Vector2) transform.position;
 
-            var end = hookTip;
+            var end = _hookTip;
             var dir = end - origin;
             dir.Normalize();
             var fallback = -dir;
@@ -80,11 +80,11 @@ namespace GGJ22.Movement {
             );
         }
         public void Attach(Rigidbody2D body, Vector2 point) {
-            hookedTo = body;
-            hookTip = point;
-            maxLength = Vector2.Distance(transform.position, point);
+            _hookedTo = body;
+            _hookTip = point;
+            _maxLength = Vector2.Distance(transform.position, point);
             joint.maxDistanceOnly = true;
-            joint.distance = maxLength;
+            joint.distance = _maxLength;
             joint.connectedAnchor = point;
         }
     }

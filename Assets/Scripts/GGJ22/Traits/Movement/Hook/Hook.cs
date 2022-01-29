@@ -69,8 +69,10 @@ namespace GGJ22.Traits.Movement.Hook {
             }
         }
         public void ForceBeginRetract(Vector2 fromPoint) {
-            _currentlyShot = true;
             wobbly.tip = fromPoint;
+            _currentlyShot = true;
+            _shotDirection = fromPoint - (Vector2) hookOrigin.position;
+            _shotDirection.Normalize();
             _currentDistance = Vector2.Distance(wobbly.tip, wobbly.origin);
             _direction = TravelDirection.Backward;
         }
@@ -115,17 +117,23 @@ namespace GGJ22.Traits.Movement.Hook {
             var origin = (Vector2) hookOrigin.position;
             var end = origin + dir;
             var results = new RaycastHit2D[1];
-            var nHits = Physics2D.LinecastNonAlloc(
-                origin,
-                end,
-                results,
-                GameConfiguration.Instance.worldMask
-            );
-            var hit = nHits > 0;
+            bool hit;
+            if (_direction == TravelDirection.Backward) {
+                hit = false;
+            } else {
+                var nHits = Physics2D.LinecastNonAlloc(
+                    origin,
+                    end,
+                    results,
+                    GameConfiguration.Instance.worldMask
+                );
+                hit = nHits > 0;
+            }
             if (hit) {
                 _currentlyShot = false;
                 _currentDistance = 0;
                 var hit2D = results.Single();
+               
                 toSet.Attach(hit2D.rigidbody, hit2D.point);
                 _motor.ActiveState = toSet;
             } else {

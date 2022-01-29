@@ -11,12 +11,12 @@ namespace GGJ22.Traits.Movement.Hook {
         public float wobbleMultiplier;
         [Required]
         public LineRenderer lineRenderer;
-        private Vector3[] points;
+        private Vector3[] _points;
         private void Start() {
-            points = new Vector3[numPoints + 1];
+            _points = new Vector3[numPoints + 1];
         }
         private void OnValidate() {
-            points = new Vector3[numPoints + 1];
+            _points = new Vector3[numPoints + 1];
         }
         private void Update() {
             if (lineRenderer != null) {
@@ -38,9 +38,9 @@ namespace GGJ22.Traits.Movement.Hook {
                 var wobble = wobbliness.Evaluate(t);
                 var offset = wobbleMultiplier * wobble;
                 var pos = Vector2.Lerp(origin, tip, t);
-                points[i] = pos + (up * offset);
+                _points[i] = pos + (up * offset);
             }
-            lineRenderer.SetPositions(points);
+            lineRenderer.SetPositions(_points);
         }
     }
 }
