@@ -21,15 +21,15 @@ namespace GGJ22.Movement {
         public GroundedState normal;
         public bool current;
         public float airControlStrength = 5;
-        public float maxHookSpeed;
-        public float hookStrength;
-
+        public DistanceJoint2D joint;
+        private float maxLength;
         public override void Begin(Motor motor, BlobInput input, ref Vector2 velocity) {
             base.Begin(motor, input, ref velocity);
             hook.enabled = false;
             hook.aimIndicator.enabled = false;
             wobbly.DeWobble();
             wobbly.wobbly.lineRenderer.enabled = true;
+            joint.enabled = true;
             current = true;
         }
         public override void End(Motor motor, BlobInput input, ref Vector2 velocity) {
@@ -38,6 +38,7 @@ namespace GGJ22.Movement {
             hook.enabled = true;
             hook.aimIndicator.enabled = true;
             wobbly.wobbly.lineRenderer.enabled = false;
+            joint.enabled = false;
             current = false;
         }
         private void Update() {
@@ -68,11 +69,7 @@ namespace GGJ22.Movement {
                 BreakHook(results.Single().point);
                 return;
             }
-            var control = motor.Control;
-            var max = maxHookSpeed * control;
             velocity.x += airControlStrength * inputDir * motor.GetDirectionControl(inputDir);
-            velocity += dir * hookStrength;
-            velocity = Vector2.ClampMagnitude(velocity, max);
         }
         private void BreakHook(Vector2 point) {
             onHookBreak.PlayIfPresent(
@@ -84,6 +81,10 @@ namespace GGJ22.Movement {
         public void Attach(Rigidbody2D body, Vector2 point) {
             hookedTo = body;
             hookTip = point;
+            maxLength = Vector2.Distance(transform.position, point);
+            joint.maxDistanceOnly = true;
+            joint.distance = maxLength;
+            joint.connectedAnchor = point;
         }
     }
 }
