@@ -37,6 +37,7 @@ namespace GGJ22.Movement {
             wobbly.deWobbling = false;
             hook.enabled = true;
             hook.aimIndicator.enabled = true;
+            hook.ForceBeginRetract(hookTip);
             wobbly.wobbly.lineRenderer.enabled = false;
             joint.enabled = false;
             current = false;
