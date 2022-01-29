@@ -518,6 +518,7 @@ MonoBehaviour:
   horizontalInputName: Horizontal
   shootInputName: Fire
   pullInputName: Pull
+  verticalInputName: Vertical
 --- !u!1 &2036699087
 GameObject:
   m_ObjectHideFlags: 0
@@ -6466,10 +6467,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 733607494}
-    - target: {fileID: 1477828018, guid: cf4138767a726ec4480570d3846b7a75, type: 3}
-      propertyPath: retractionSpeed
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 252645748649134497, guid: cf4138767a726ec4480570d3846b7a75, type: 3}
       propertyPath: m_Name
       value: Pedro
