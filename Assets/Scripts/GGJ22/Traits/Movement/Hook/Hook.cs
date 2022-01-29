@@ -8,8 +8,18 @@ using Lunari.Tsuki.Entities;
 using Lunari.Tsuki2D.Runtime.Movement;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 namespace GGJ22.Traits.Movement.Hook {
     public class Hook : Trait {
+        public enum HookSlotType : sbyte {
+            Min = -1,
+            Mid = 0,
+            Max = 1
+        }
+        [Serializable]
+        public struct HookSlot {
+            public HookSlotType horizontal, vertical;
+        }
         private const string HookHasTargetName = "HookHasTarget";
         public float travelSpeed = 5;
         public float retractionSpeed = 1;
@@ -24,6 +34,7 @@ namespace GGJ22.Traits.Movement.Hook {
         public Wobbly wobbly;
         [Required]
         public HookedState toSet;
+        public float penetrationDistance;
 
         #region Traits
 
@@ -130,12 +141,7 @@ namespace GGJ22.Traits.Movement.Hook {
                 hit = nHits > 0;
             }
             if (hit) {
-                _currentlyShot = false;
-                _currentDistance = 0;
-                var hit2D = results.Single();
-               
-                toSet.Attach(hit2D.rigidbody, hit2D.point);
-                _motor.ActiveState = toSet;
+                OnHooked(results.Single());
             } else {
                 var wobbleCurve = _direction switch {
                     TravelDirection.Forward => wobbleOverTime,
@@ -148,6 +154,40 @@ namespace GGJ22.Traits.Movement.Hook {
                 wobbly.tip = end;
                 wobbly.wobbleMultiplier = wobbleAmount;
             }
+        }
+        public HookSlotType FindTypeFor(float offset) {
+            const float tileSize = 1;
+            const float segmentLength = tileSize / 3;
+            return (HookSlotType) (Mathf.FloorToInt(offset / segmentLength) - 1);
+        }
+        private void OnHooked(RaycastHit2D hit) {
+            _currentlyShot = false;
+            _currentDistance = 0;
+            var normal = hit.normal;
+            var point = hit.point;
+            var innerPoint = point + (-normal * penetrationDistance);
+          
+            var tilemap = hit.transform.GetComponent<Tilemap>();
+            if (tilemap == null) {
+                return;
+            }
+            var cell = tilemap.WorldToCell(innerPoint);
+            var cellSize = tilemap.cellSize;
+            var cellCenter = tilemap.GetCellCenterWorld(cell);
+            var offset = point - (Vector2) (cellCenter - (cellSize / 2));
+            var slot = new HookSlot {
+                horizontal = FindTypeFor(offset.x),
+                vertical = FindTypeFor(offset.y),
+            };
+            
+            toSet.Attach(
+                slot,
+                tilemap,
+                hit.collider,
+                cell
+            );
+
+            _motor.ActiveState = toSet;
         }
         private void UpdateIndicator() {
             if (_aim == null) {

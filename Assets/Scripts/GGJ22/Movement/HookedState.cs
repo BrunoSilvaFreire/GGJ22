@@ -9,6 +9,7 @@ using Shiroi.FX.Effects;
 using Shiroi.FX.Features;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 namespace GGJ22.Movement {
     public class HookedState : MotorState<BlobInput> {
         public float linecastOffset = 1;
@@ -84,8 +85,19 @@ namespace GGJ22.Movement {
                 new PositionFeature(point)
             );
         }
-        public void Attach(Rigidbody2D body, Vector2 point) {
-            _hookedTo = body;
+        public void Attach(
+            Hook.HookSlot slot,
+            Tilemap tilemap,
+            Collider2D tCollider,
+            Vector3Int cell
+        ) {
+
+            var cellCenter = tilemap.GetCellCenterWorld(cell);
+            var offset = tilemap.cellSize;
+            offset.x *= (float) slot.horizontal / 2;
+            offset.y *= (float) slot.vertical / 2;
+            var point = cellCenter + offset;
+            _hookedTo = tCollider.attachedRigidbody;
             _hookTip = point;
             _maxLength = Vector2.Distance(transform.position, point);
             joint.maxDistanceOnly = true;
