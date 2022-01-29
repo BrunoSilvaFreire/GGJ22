@@ -22,6 +22,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="1">
   <properties>
@@ -44,6 +47,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="2">
   <properties>
@@ -66,6 +72,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="3">
+   <object id="2" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="3">
   <properties>
@@ -88,6 +97,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="4">
   <properties>
@@ -110,6 +122,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="5">
   <properties>
@@ -132,6 +147,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="6">
   <properties>
@@ -154,6 +172,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="7">
   <properties>
@@ -176,6 +197,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="8">
   <properties>
@@ -198,6 +222,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="9">
   <properties>
@@ -220,6 +247,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="10">
   <properties>
@@ -242,6 +272,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="11">
   <properties>
@@ -264,6 +297,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="12">
   <properties>
@@ -286,6 +322,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="13">
   <properties>
@@ -308,6 +347,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="14">
   <properties>
@@ -330,6 +372,9 @@
    <property name="Tied" type="bool" value="true"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="15">
   <properties>
@@ -352,6 +397,9 @@
    <property name="Tied" type="bool" value="true"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="16">
   <properties>
@@ -374,6 +422,9 @@
    <property name="Tied" type="bool" value="true"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="17">
   <properties>
@@ -396,6 +447,9 @@
    <property name="Tied" type="bool" value="true"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="18">
   <properties>
@@ -418,6 +472,9 @@
    <property name="Tied" type="bool" value="true"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="19">
   <properties>
@@ -1452,6 +1509,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="66">
   <properties>
@@ -1474,6 +1534,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="67">
   <properties>
@@ -1496,6 +1559,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="68">
   <properties>
@@ -1518,6 +1584,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="69">
   <properties>
@@ -1540,6 +1609,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="70">
   <properties>
@@ -1562,6 +1634,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="71">
   <properties>
@@ -1584,6 +1659,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="72">
   <properties>
@@ -1606,6 +1684,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="73">
   <properties>
@@ -1628,6 +1709,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="74">
   <properties>
@@ -1650,6 +1734,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="75">
   <properties>
@@ -1672,6 +1759,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="76">
   <properties>
@@ -1694,6 +1784,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="77">
   <properties>
@@ -1716,6 +1809,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="78">
   <properties>
@@ -1738,6 +1834,9 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
  <tile id="79">
   <properties>
@@ -1760,5 +1859,8 @@
    <property name="Tied" type="bool" value="false"/>
    <property name="Tier" type="bool" value="false"/>
   </properties>
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="8" height="8"/>
+  </objectgroup>
  </tile>
 </tileset>
