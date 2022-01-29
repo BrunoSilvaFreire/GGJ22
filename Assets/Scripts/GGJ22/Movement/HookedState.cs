@@ -15,6 +15,8 @@ namespace GGJ22.Movement {
         public float linecastOffset = 1;
         public WobblyController wobbly;
         public Effect onHookBreak;
+        public Effect onHookAttached;
+
         public Hook hook;
         public GroundedState normal;
         public bool current;
@@ -103,6 +105,11 @@ namespace GGJ22.Movement {
             joint.maxDistanceOnly = true;
             joint.distance = _maxLength;
             joint.connectedAnchor = point;
+            onHookAttached.PlayIfPresent(
+                this,
+                false,
+                new PositionFeature(_hookTip)
+            );
         }
     }
 }

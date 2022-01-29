@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a8a617ead31e54988376e6a4869423, type: 3}
+  m_Name: HookAttached_Effect
+  m_EditorClassIdentifier: 
+  Effects:
+  - {fileID: 7122792429132321413}
+  - {fileID: 7554921546780799067}
+--- !u!114 &7122792429132321413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7926766e91bf00249a31f6b83d90d8f6, type: 3}
+  m_Name: ParticleEffect
+  m_EditorClassIdentifier: 
+  ParticlePrefab: {fileID: 2309071057718874541, guid: 9d0d61ae635195a4ba06bddca9b28483, type: 3}
+  ForceDestroyOnFinished: 1
+--- !u!114 &7554921546780799067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1473f87c4ac5b4ca9349b6011659a1, type: 3}
+  m_Name: AudioEffect
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: 2e9faa1fc2cb8594a86e94f2aeb5e27c, type: 3}
+  Volume:
+    Source: 0
+    TagName: 
+    Value:
+      m_Mode: 0
+      m_CurveMultiplier: 0
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 0.6
+  Pitch:
+    Source: 0
+    TagName: 
+    Value:
+      m_Mode: 3
+      m_CurveMultiplier: 1
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0.8
+      m_ConstantMax: 0.9
+  Loop: 0
+  BypassEffects: 0
+  Range: 10
+  LoopDuration:
+    Source: 0
+    TagName: 
+    Value:
+      Mode: 0
+      Range:
+        start: 0
+        end: 0
+      Constant: 2
+  UseAudioControllerIfPresent: 1
+  Mixer: {fileID: 0}

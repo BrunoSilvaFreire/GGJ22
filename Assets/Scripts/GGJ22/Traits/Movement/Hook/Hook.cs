@@ -6,6 +6,7 @@ using GGJ22.Movement;
 using GGJ22.Traits.Juice;
 using Lunari.Tsuki.Entities;
 using Lunari.Tsuki2D.Runtime.Movement;
+using Shiroi.FX.Effects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Tilemaps;
