@@ -79,6 +79,10 @@ namespace GGJ22.Traits.Movement.Hook {
                     () => _hasTarget
                 );
             }
+            descriptor.RequiresAnimatorParameter("Hooked", AnimatorControllerParameterType.Bool);
+            if (descriptor.DependsOn(out  AnimatorBinder binder)) {
+                binder.BindBool("Hooked", () => _motor.ActiveState == toSet);
+            }
         }
         public void ForceBeginRetract(Vector2 fromPoint) {
             wobbly.tip = fromPoint;

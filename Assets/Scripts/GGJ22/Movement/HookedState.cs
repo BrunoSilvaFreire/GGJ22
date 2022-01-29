@@ -20,6 +20,7 @@ namespace GGJ22.Movement {
         public Hook hook;
         public GroundedState normal;
         public bool current;
+        public float lengthAdjustmentSpeed;
         public float airControlStrength = 5;
         public DistanceJoint2D joint;
 
@@ -57,6 +58,10 @@ namespace GGJ22.Movement {
                 OnStoppedHooking(motor);
                 return;
             }
+            var distance = joint.distance;
+            var acceleration = lengthAdjustmentSpeed * -input.vertical * Time.fixedDeltaTime;
+            distance += acceleration;
+            joint.distance = Mathf.Clamp(distance, 0, hook.hookLength);
             var horizontal = input.horizontal;
             var inputDir = Math.Sign(horizontal);
             var results = new RaycastHit2D[1];

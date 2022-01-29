@@ -518,6 +518,7 @@ MonoBehaviour:
   horizontalInputName: Horizontal
   shootInputName: Fire
   pullInputName: Pull
+  verticalInputName: Vertical
 --- !u!1 &2036699087
 GameObject:
   m_ObjectHideFlags: 0

@@ -5038,6 +5038,7 @@ MonoBehaviour:
   hook: {fileID: 1477828018}
   normal: {fileID: 169682749}
   current: 0
+  lengthAdjustmentSpeed: 10
   airControlStrength: 0.5
   joint: {fileID: 1884618924}
 --- !u!1 &1027810609
@@ -5558,7 +5559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637503766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.41, y: 10.02, z: -0.070932694}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6120,6 +6121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontal: 0
+  vertical: 0
 --- !u!1 &6580296114117895920
 GameObject:
   m_ObjectHideFlags: 0
@@ -6193,12 +6195,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5388091a0497bf840994fd14d4b72c15, type: 3}
+  m_Sprite: {fileID: -892923074, guid: be2f299940f44074ea91da343027b580, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
