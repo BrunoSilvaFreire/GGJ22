@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Name: AudioEffect
   m_EditorClassIdentifier: 
   Clips:
-  - {fileID: 8300000, guid: 14ed5cbaae703f04e910a4443e63f176, type: 3}
+  - {fileID: 8300000, guid: 07a8bdf57861dcc45a0bf2a971cbbdd9, type: 3}
   Volume:
     Source: 0
     TagName: 
@@ -62,7 +62,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0.6
+      m_ConstantMax: 0.2
   Pitch:
     Source: 0
     TagName: 
@@ -117,7 +117,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      m_ConstantMin: 0.8
+      m_ConstantMin: 1
       m_ConstantMax: 1.2
   Loop: 0
   BypassEffects: 0

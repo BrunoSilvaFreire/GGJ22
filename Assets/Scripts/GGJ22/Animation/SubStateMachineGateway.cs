@@ -118,7 +118,6 @@ namespace GGJ22.Animation {
         public int destination;
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex, AnimatorControllerPlayable controller) {
             if (condition.IsMet(animator)) {
-                Debug.Log("Moving");
                 animator.Play(destination);
             }
         }

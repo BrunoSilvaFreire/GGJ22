@@ -14,7 +14,7 @@ namespace GGJ22.Traits {
         private void Update() {
             if (camera != null) {
                 Vector3 mousePos = Mouse.current.position.ReadValue();
-                mousePos.z = 0;
+                mousePos.z = -camera.transform.position.z;
                 worldPosition = camera.ScreenToWorldPoint(mousePos);
             }
         }

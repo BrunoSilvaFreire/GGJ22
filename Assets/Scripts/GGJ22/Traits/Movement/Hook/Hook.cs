@@ -24,6 +24,7 @@ namespace GGJ22.Traits.Movement.Hook {
         private const string HookHasTargetName = "HookHasTarget";
         public float travelSpeed = 5;
         public float retractionSpeed = 1;
+        public Effect onShot;
         [Required]
         public LineRenderer hookLine;
         public float hookLength = 5;
@@ -224,6 +225,7 @@ namespace GGJ22.Traits.Movement.Hook {
             if (_currentlyShot) {
                 return;
             }
+            onShot.PlayIfPresent(this);
             _currentlyShot = true;
             _direction = TravelDirection.Forward;
             _shotDirection = _aim.AimDirection.normalized;
