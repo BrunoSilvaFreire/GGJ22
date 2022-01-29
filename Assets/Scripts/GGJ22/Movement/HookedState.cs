@@ -51,7 +51,7 @@ namespace GGJ22.Movement {
 
         public override void Tick(Motor motor, BlobInput input, ref Vector2 velocity) {
             if (!input.shoot.Current) {
-                motor.ActiveState = normal;
+                OnStoppedHooking(motor);
                 return;
             }
             var horizontal = input.horizontal;
@@ -72,7 +72,12 @@ namespace GGJ22.Movement {
             }
             velocity.x += airControlStrength * inputDir * motor.GetDirectionControl(inputDir);
         }
+        private void OnStoppedHooking(Motor motor) {
+            normal.BlockExtraGravityUntilGrounded();
+            motor.ActiveState = normal;
+        }
         private void BreakHook(Vector2 point) {
+            normal.BlockExtraGravityUntilGrounded();
             onHookBreak.PlayIfPresent(
                 this,
                 false,
